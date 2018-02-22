@@ -37,6 +37,7 @@ import java.io.InputStream;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    //hizud
     String url = "https://uny.ac.id/index";
     ProgressDialog mProgressDialog;
     String postTitle[] = new String[10];
