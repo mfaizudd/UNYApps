@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     //hizud
-    String url = "https://uny.ac.id/index";
+    String url = "https://uny.ac.id/index-berita";
     ProgressDialog mProgressDialog;
     String postTitle[] = new String[10];
     Button loadButton;
