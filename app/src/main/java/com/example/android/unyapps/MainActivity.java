@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity
     String postLink[] = new String[10];
     SharedPreferences sp;
 
+    //apaansih
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
