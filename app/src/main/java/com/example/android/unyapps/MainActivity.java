@@ -36,7 +36,7 @@ import java.io.InputStream;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    String url = "https://uny.ac.id/index-berita";
+    String url = "https://uny.ac.id/xx";
     ProgressDialog mProgressDialog;
     String postTitle[] = new String[10];
     Button loadButton;
@@ -197,6 +197,11 @@ public class MainActivity extends AppCompatActivity
             drawerLogo.setImageBitmap(bitmap);
             logoImage.setImageBitmap(bitmap);
             mProgressDialog.dismiss();
+
+
+
+
         }
+
     }
 }
