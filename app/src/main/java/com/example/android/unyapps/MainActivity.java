@@ -194,15 +194,6 @@ public class MainActivity extends AppCompatActivity
             drawerLogo.setImageBitmap(bitmap);
             logoImage.setImageBitmap(bitmap);
             mProgressDialog.dismiss();
-
-
-
-
         }
-
-    }
-
-    void doNothing() {
-        return;
     }
 }
