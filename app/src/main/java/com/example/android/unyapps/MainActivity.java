@@ -195,11 +195,15 @@ public class MainActivity extends AppCompatActivity
         }
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     void doNothing() {
         return;
     }
 }
+=======
+}
+>>>>>>> 254221a037711d2ccb33ae084a31310d89a5bbca
 =======
 }
 >>>>>>> 254221a037711d2ccb33ae084a31310d89a5bbca
