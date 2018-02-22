@@ -24,7 +24,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 public class PostViewActivity extends AppCompatActivity {
-
+    //WEDAN
     ProgressDialog mProgressDialog;
     SharedPreferences sp;
     String url = "";
@@ -78,7 +78,6 @@ public class PostViewActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
             return null;
-            //asd
         }
 
         @Override
