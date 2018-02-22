@@ -193,4 +193,8 @@ public class MainActivity extends AppCompatActivity
             mProgressDialog.dismiss();
         }
     }
+
+    void doNothing() {
+        return;
+    }
 }
