@@ -52,13 +52,7 @@ public class MainActivity extends AppCompatActivity
 
         sp = getSharedPreferences("com.example.android.unyapps", MODE_PRIVATE);
 
-        loadButton = findViewById(R.id.loadButton);
-        loadButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                new Title().execute();
-            }
-        });
+        new Title().execute();
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
