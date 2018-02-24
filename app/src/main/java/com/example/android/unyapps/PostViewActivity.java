@@ -8,6 +8,7 @@ import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -36,14 +37,13 @@ public class PostViewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post_view);
 
-        new ProcessData().execute();
 
         tv = findViewById(R.id.postViewContent);
 
-        sp = getSharedPreferences("com.example.android.unyapps", MODE_PRIVATE);
-        title = sp.getString("postTitle", "");
-        url = "http://www.uny.ac.id"+sp.getString("postLink", "");
-//        tv.setText(url);
+        Bundle bundle = getIntent().getExtras();
+        title = bundle.getString("postTitle", "");
+        url = "http://www.uny.ac.id" + bundle.getString("postLink", "");
+        new ProcessData().execute();
     }
 
     private class ProcessData extends AsyncTask<Void, Void, Void> {
