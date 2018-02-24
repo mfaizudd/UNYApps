@@ -49,7 +49,7 @@ public class PostViewActivity extends AppCompatActivity {
     private class ProcessData extends AsyncTask<Void, Void, Void> {
         String title;
         Bitmap bitmap;
-        String content;
+        String content="";
 
         @Override
         protected void onPreExecute() {
@@ -72,7 +72,9 @@ public class PostViewActivity extends AppCompatActivity {
                 InputStream is = new java.net.URL(img.attr("src")).openStream();
                 bitmap = BitmapFactory.decodeStream(is);
                 Elements econtent = document.select("div[class=field-item even] p");
-                content = econtent.text();
+                for(Element item : econtent) {
+                    content += "\t\t\t"+item.text()+"\n\n";
+                }
                 // Get the html document title
             } catch (IOException e) {
                 e.printStackTrace();

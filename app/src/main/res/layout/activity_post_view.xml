@@ -26,6 +26,7 @@
             <ImageView
                 android:id="@+id/postImage"
                 android:layout_width="match_parent"
+                android:layout_marginBottom="16dp"
                 android:layout_height="250dp" />
 
             <TextView
