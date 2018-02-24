@@ -72,7 +72,7 @@ public class IndexBeritaActivity extends AppCompatActivity {
                 // Get the html document title
                 Elements img = document.select("a[title=Home] img[src]");
                 Elements epostTitle = document.select("strong[class=field-content] a[href]");
-                Elements ePostImage = document.select("div[class=field-content] img[src]");
+                Elements ePostImage = document.select("div[class=views-field views-field-field-image] div[class=field-content] img[src]");
                 Elements eContents = document.select("div[class=views-field views-field-body] div[class=field-content] p");
                 int index = 0;
                 for(Element item : epostTitle) {
@@ -117,6 +117,7 @@ public class IndexBeritaActivity extends AppCompatActivity {
                 newsCard.setLayoutParams(matchAndWrap);
                 newsCard.setClickable(true);
                 newsCard.setFocusable(true);
+                newsCard.setOrientation(LinearLayout.VERTICAL);
                 newsCard.setGravity(Gravity.CENTER);
 
                 LinearLayout newsCardContainer = new LinearLayout(getApplicationContext());
@@ -133,8 +134,7 @@ public class IndexBeritaActivity extends AppCompatActivity {
                 ta.recycle();
                 newsCard.setBackgroundDrawable(cardDrawable);
                 LinearLayout.LayoutParams cardImageParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-                cardImageParams.width = getDP(100);
-                cardImageParams.height = getDP(100);
+                cardImageParams.height = getDP(250);
                 cardImage.setLayoutParams(cardImageParams);
                 cardImage.setScaleType(ImageView.ScaleType.CENTER_CROP);
                 cardImage.setImageBitmap(postImage[index]);
