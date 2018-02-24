@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/UNYApps.iml" filepath="$PROJECT_DIR$/UNYApps.iml" />
+      <module fileurl="file://D:\Projects\Android\UNYApps\UNYApps.iml" filepath="D:\Projects\Android\UNYApps\UNYApps.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
