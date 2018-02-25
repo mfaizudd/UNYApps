@@ -70,12 +70,12 @@ public class NoticeViewActivity extends AppCompatActivity {
                 Document document = Jsoup.connect(url).get();
                 Elements epostTitle = document.select("h1[class=title] a[href]");
                 title = epostTitle.text();
-//                Elements img = document.select("img");
+                Elements img = document.select("div[class=field-item even] p img[src]");
                 //test url
                 Elements footer = document.select("p[style]");
                 content =  footer.text();
-//                InputStream is = new java.net.URL(img.attr("src")).openStream();
-//                bitmap = BitmapFactory.decodeStream(is);
+                InputStream is = new java.net.URL("https://www.uny.ac.id"+img.attr("src")).openStream();
+                bitmap = BitmapFactory.decodeStream(is);
 
 //                Elements econtent = document.select("div[class=field-item even] p");
 //                for(Element item : econtent) {
@@ -92,9 +92,9 @@ public class NoticeViewActivity extends AppCompatActivity {
             // Set title into TextView
             TextView titleTextView = findViewById(R.id.noticeViewTitleText);
             titleTextView.setText(title);
-//            ImageView postImage = findViewById(R.id.noticePostImage);
-//            postImage.setImageBitmap(bitmap);
-           TextView textContent = findViewById(R.id.noticeViewContent);
+            ImageView postImage = findViewById(R.id.noticePostImage);
+            postImage.setImageBitmap(bitmap);
+            TextView textContent = findViewById(R.id.noticeViewContent);
             textContent.setText(content);
             mProgressDialog.dismiss();
         }

@@ -34,7 +34,9 @@
                 <TextView
                     android:id="@+id/titleText"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginTop="16dp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -43,25 +45,25 @@
                     <Button
                         android:id="@+id/buttonBerita"
                         android:layout_width="0dp"
+                        android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:background="#ddd"
-                        android:layout_height="match_parent"
                         android:text="Berita" />
 
                     <Button
                         android:id="@+id/buttonPengumuman"
                         android:layout_width="0dp"
+                        android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:background="@color/white"
-                        android:layout_height="match_parent"
                         android:text="Pengumuman" />
 
                     <Button
                         android:id="@+id/buttonEvent"
                         android:layout_width="0dp"
+                        android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:background="@color/white"
-                        android:layout_height="match_parent"
                         android:text="Event" />
 
                 </LinearLayout>

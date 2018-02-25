@@ -61,6 +61,7 @@ public class IndexPengumumanActivity extends AppCompatActivity {
 
     private class Title extends AsyncTask<Void, Void, Void> {
         String title;
+        Bitmap bitmap;
 
 
         @Override
@@ -79,6 +80,7 @@ public class IndexPengumumanActivity extends AppCompatActivity {
                 // Connect to the web site
                 Document document = Jsoup.connect(url).get();
                 // Get the html document title
+                Elements img = document.select("a[title=Home] img[src]");
                 Elements epostTitle = document.select("strong a[href]");
                 Elements epostDate = document.select("td[class=views-field views-field-created]");
                 int index = 0;
@@ -94,6 +96,9 @@ public class IndexPengumumanActivity extends AppCompatActivity {
                     index++;
                     if(index>=PAGE_SIZE) break;
                 }
+                String imgSrc = img.attr("src");
+                InputStream input = new java.net.URL(imgSrc).openStream();
+                bitmap = BitmapFactory.decodeStream(input);
                 title = document.title();
             } catch (IOException e) {
                 e.printStackTrace();
@@ -105,8 +110,6 @@ public class IndexPengumumanActivity extends AppCompatActivity {
         protected void onPostExecute(Void result){
 
             TextView titleText = findViewById(R.id.titleNotice);
-            TextView postTitleText = findViewById(R.id.noticeTitle);
-            TextView postDateText = findViewById(R.id.noticeDate);
 
             titleText.setText(title);
             LinearLayout noticeView = findViewById(R.id.noticeView);
@@ -175,6 +178,8 @@ public class IndexPengumumanActivity extends AppCompatActivity {
                 index++;
 
             }
+            ImageView logoImage = findViewById(R.id.logoImage);
+            logoImage.setImageBitmap(bitmap);
             mProgressDialog.dismiss();
         }
     }
