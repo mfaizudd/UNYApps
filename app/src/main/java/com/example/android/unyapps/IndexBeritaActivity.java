@@ -43,9 +43,21 @@ public class IndexBeritaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_index_berita);
 
+        Button button1 = (Button)findViewById(R.id.button1);
+        button1.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View view) {
+                Intent i =new Intent(IndexBeritaActivity.this,IndexPengumumanActivity.class);
+                startActivity(i);
+            }
+
+        });
+
         sp = getSharedPreferences("com.example.android.unyapps", MODE_PRIVATE);
 
         new Title().execute();
+
+
     }
 
     private class Title extends AsyncTask<Void, Void, Void> {
