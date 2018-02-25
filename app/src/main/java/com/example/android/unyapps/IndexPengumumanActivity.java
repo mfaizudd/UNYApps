@@ -45,6 +45,16 @@ public class IndexPengumumanActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_index_pengumuman);
 
+        Button buttonBerita = findViewById(R.id.buttonBerita);
+        buttonBerita.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(IndexPengumumanActivity.this, IndexBeritaActivity.class);
+                startActivity(i);
+                finish();
+            }
+        });
+
        new Title().execute();
 
     }

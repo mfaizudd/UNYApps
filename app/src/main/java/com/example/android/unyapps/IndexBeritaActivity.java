@@ -34,7 +34,6 @@ public class IndexBeritaActivity extends AppCompatActivity {
     String url = "https://uny.ac.id/index-berita";
     ProgressDialog mProgressDialog;
     String postTitle[] = new String[PAGE_SIZE];
-    Button loadButton;
     String postLink[] = new String[PAGE_SIZE];
     SharedPreferences sp;
 
@@ -43,12 +42,13 @@ public class IndexBeritaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_index_berita);
 
-        Button button1 = (Button)findViewById(R.id.button1);
+        Button button1 = (Button)findViewById(R.id.buttonPengumuman);
         button1.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View view) {
                 Intent i =new Intent(IndexBeritaActivity.this,IndexPengumumanActivity.class);
                 startActivity(i);
+                finish();
             }
 
         });
@@ -120,7 +120,6 @@ public class IndexBeritaActivity extends AppCompatActivity {
         protected void onPostExecute(Void result) {
             // Set title into TextView
             TextView titleText = findViewById(R.id.titleText);
-            TextView postTitleText = findViewById(R.id.postTitleText);
             LinearLayout newsView = findViewById(R.id.newsView);
             int index = 0;
             for(String item : postTitle) {
