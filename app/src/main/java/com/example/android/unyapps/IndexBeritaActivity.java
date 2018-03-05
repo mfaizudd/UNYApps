@@ -130,6 +130,11 @@ public class IndexBeritaActivity extends AppCompatActivity {
                 newsCard.setFocusable(true);
                 newsCard.setOrientation(LinearLayout.VERTICAL);
                 newsCard.setGravity(Gravity.CENTER);
+                int[] attrs = new int[] {R.attr.selectableItemBackground};
+                TypedArray ta = obtainStyledAttributes(attrs);
+                Drawable cardDrawable = ta.getDrawable(0);
+                ta.recycle();
+                newsCard.setBackgroundDrawable(cardDrawable);
 
                 LinearLayout newsCardContainer = new LinearLayout(getApplicationContext());
                 LinearLayout.LayoutParams containerParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
@@ -139,11 +144,6 @@ public class IndexBeritaActivity extends AppCompatActivity {
                 newsCardContainer.addView(newsCard);
 
                 ImageView cardImage = new ImageView(getApplicationContext());
-                int[] attrs = new int[] {R.attr.selectableItemBackground};
-                TypedArray ta = obtainStyledAttributes(attrs);
-                Drawable cardDrawable = ta.getDrawable(0);
-                ta.recycle();
-                newsCard.setBackgroundDrawable(cardDrawable);
                 LinearLayout.LayoutParams cardImageParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
                 cardImageParams.height = getDP(250);
                 cardImage.setLayoutParams(cardImageParams);
